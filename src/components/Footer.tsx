@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/karibe-logo.jpg";
 
 const Footer = () => (
@@ -13,11 +13,11 @@ const Footer = () => (
             Vibrant nails inspired by the Caribbean. Premium nail art in San Juan, Puerto Rico.
           </p>
           <div className="flex gap-3 mt-4">
-            <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-primary transition-colors" aria-label="Instagram">
-              <Instagram size={18} />
+            <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-primary transition-colors text-sm font-body" aria-label="Instagram">
+              IG
             </a>
-            <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-primary transition-colors" aria-label="Facebook">
-              <Facebook size={18} />
+            <a href="#" className="p-2 rounded-full bg-background/10 hover:bg-primary transition-colors text-sm font-body" aria-label="Facebook">
+              FB
             </a>
           </div>
         </div>
