@@ -36,7 +36,7 @@ const Footer = () => (
               className="p-3 border border-background/20 hover:bg-primary hover:border-primary transition-colors"
               aria-label="Instagram"
             >
-              <Instagram size={16} />
+              <IgIcon />
             </a>
             <a
               href="https://facebook.com/karibenails"
@@ -45,7 +45,7 @@ const Footer = () => (
               className="p-3 border border-background/20 hover:bg-primary hover:border-primary transition-colors"
               aria-label="Facebook"
             >
-              <Facebook size={16} />
+              <FbIcon />
             </a>
           </div>
         </div>
