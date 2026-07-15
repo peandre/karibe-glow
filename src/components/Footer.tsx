@@ -1,31 +1,54 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/karibe-logo.jpg";
+import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
-    <div className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        {/* Brand */}
-        <div>
-          <img src={logo} alt="Karibe Nails" className="h-16 w-auto rounded-lg mb-4" />
-          <p className="text-background/70 text-sm font-body leading-relaxed">
-            Vibrant nails inspired by the Caribbean. Premium nail art in San Juan, Puerto Rico.
+    <div className="container mx-auto px-4 pt-20 pb-10">
+      {/* Massive brand mark */}
+      <div className="border-b border-background/10 pb-10 mb-12">
+        <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-6">
+          — Caribbean nail atelier
+        </p>
+        <h2 className="display-mega text-background">
+          Karibe<span className="text-primary">.</span>
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+        {/* Statement */}
+        <div className="md:col-span-5">
+          <p className="text-background/70 font-body text-sm leading-relaxed max-w-sm">
+            Nails as canvas. Ten years of tropical craft in the heart of San Juan,
+            Puerto Rico — reserved, precise, unmistakably ours.
           </p>
-          <div className="flex gap-3 mt-4">
-            <a href="https://instagram.com/karibenails" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full bg-background/10 hover:bg-primary transition-colors" aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          <div className="flex gap-2 mt-6">
+            <a
+              href="https://instagram.com/karibenails"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 border border-background/20 hover:bg-primary hover:border-primary transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={16} />
             </a>
-            <a href="https://facebook.com/karibenails" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full bg-background/10 hover:bg-primary transition-colors" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            <a
+              href="https://facebook.com/karibenails"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 border border-background/20 hover:bg-primary hover:border-primary transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook size={16} />
             </a>
           </div>
         </div>
 
-        {/* Quick Links */}
-        <div>
-          <h4 className="font-display text-lg mb-4">Quick Links</h4>
-          <div className="flex flex-col gap-2">
+        {/* Navigate */}
+        <div className="md:col-span-3">
+          <h4 className="font-body text-[11px] uppercase tracking-editorial text-primary mb-5">
+            Navigate
+          </h4>
+          <div className="flex flex-col gap-3">
             {[
               { label: "Home", path: "/" },
               { label: "About", path: "/about" },
@@ -33,36 +56,41 @@ const Footer = () => (
               { label: "Portfolio", path: "/portfolio" },
               { label: "Book Now", path: "/appointments" },
             ].map((l) => (
-              <Link key={l.path} to={l.path} className="text-background/70 hover:text-primary text-sm font-body transition-colors">
+              <Link
+                key={l.path}
+                to={l.path}
+                className="font-display text-2xl text-background hover:text-primary transition-colors leading-none"
+              >
                 {l.label}
               </Link>
             ))}
           </div>
         </div>
 
-        {/* Contact */}
-        <div>
-          <h4 className="font-display text-lg mb-4">Contact</h4>
-          <div className="flex flex-col gap-3 text-sm text-background/70 font-body">
-            <div className="flex items-center gap-2"><Phone size={14} /> +1-787-123-4567</div>
-            <div className="flex items-center gap-2"><Mail size={14} /> info@karibenails.com</div>
-            <div className="flex items-center gap-2"><MapPin size={14} /> San Juan, Puerto Rico</div>
+        {/* Contact + Hours */}
+        <div className="md:col-span-4">
+          <h4 className="font-body text-[11px] uppercase tracking-editorial text-primary mb-5">
+            Studio
+          </h4>
+          <div className="flex flex-col gap-3 text-sm text-background/70 font-body mb-8">
+            <div className="flex items-center gap-3"><Phone size={14} /> +1-787-123-4567</div>
+            <div className="flex items-center gap-3"><Mail size={14} /> info@karibenails.com</div>
+            <div className="flex items-center gap-3"><MapPin size={14} /> San Juan, Puerto Rico</div>
           </div>
-        </div>
-
-        {/* Hours */}
-        <div>
-          <h4 className="font-display text-lg mb-4">Hours</h4>
-          <div className="flex flex-col gap-2 text-sm text-background/70 font-body">
-            <p>Mon – Fri: 9am – 7pm</p>
-            <p>Saturday: 10am – 6pm</p>
-            <p>Sunday: Closed</p>
+          <h4 className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">
+            Hours
+          </h4>
+          <div className="flex flex-col gap-1 text-sm text-background/70 font-body">
+            <p><span className="text-background/50">Mon–Fri</span>  ·  9am – 7pm</p>
+            <p><span className="text-background/50">Saturday</span>  ·  10am – 6pm</p>
+            <p><span className="text-background/50">Sunday</span>  ·  Closed</p>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-background/10 mt-12 pt-6 text-center text-sm text-background/50 font-body">
-        © {new Date().getFullYear()} Karibe Nails. All rights reserved.
+      <div className="border-t border-background/10 mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-background/40 font-body uppercase tracking-editorial">
+        <span>© {new Date().getFullYear()} Karibe Nails</span>
+        <span>San Juan · Puerto Rico</span>
       </div>
     </div>
   </footer>

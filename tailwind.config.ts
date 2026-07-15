@@ -7,15 +7,15 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
       fontFamily: {
-        display: ["Georgia", "serif"],
-        body: ["Montserrat", "sans-serif"],
+        display: ['"Abril Fatface"', "Georgia", "serif"],
+        body: ["Cabin", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,13 +51,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        tropical: {
-          green: "hsl(var(--tropical-green))",
-          orange: "hsl(var(--tropical-orange))",
-          pink: "hsl(var(--tropical-pink))",
-          red: "hsl(var(--tropical-red))",
-          cream: "hsl(var(--tropical-cream))",
-        },
+        highlight: "hsl(var(--highlight))",
+        coral: "hsl(var(--primary))",
+        magenta: "hsl(var(--accent))",
+        "violet-deep": "hsl(var(--secondary))",
+        cream: "hsl(var(--background))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -87,11 +85,16 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        "marquee": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "float": "float 3s ease-in-out infinite",
+        "marquee": "marquee 30s linear infinite",
       },
     },
   },
