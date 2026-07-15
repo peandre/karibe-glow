@@ -7,11 +7,6 @@ import nails3 from "@/assets/nails-art-3.jpg";
 import pedicure from "@/assets/pedicure.jpg";
 import hero from "@/assets/hero-nails.jpg";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
 const categories = ["All", "Manicure", "Pedicure", "Nail Art", "Acrylics", "Gel Nails"];
 
 const portfolioItems = [
@@ -21,86 +16,87 @@ const portfolioItems = [
   { img: pedicure, title: "Spa Day Bliss", category: "Pedicure" },
   { img: hero, title: "Studio Vibes", category: "Manicure" },
   { img: nails1, title: "Floral Dreams", category: "Nail Art" },
+  { img: nails2, title: "Coral Study", category: "Gel Nails" },
+  { img: nails3, title: "Sunset Set", category: "Acrylics" },
+  { img: pedicure, title: "Barefoot Ritual", category: "Pedicure" },
 ];
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [lightbox, setLightbox] = useState<number | null>(null);
 
-  const filtered = activeCategory === "All"
-    ? portfolioItems
-    : portfolioItems.filter((p) => p.category === activeCategory);
+  const filtered =
+    activeCategory === "All" ? portfolioItems : portfolioItems.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="min-h-screen pt-20">
-      {/* Header */}
-      <section className="gradient-soft py-24">
-        <div className="container mx-auto px-4">
-          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} className="font-display text-5xl text-center mb-6">
-            Our <span className="text-gradient-tropical">Portfolio</span>
-          </motion.h1>
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            variants={{ ...fadeUp, visible: { ...fadeUp.visible, transition: { duration: 0.6, delay: 0.2 } } }}
-            className="text-muted-foreground text-center font-body max-w-xl mx-auto"
-          >
-            Browse our collection of Caribbean-inspired nail designs.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Filters & Gallery */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-body font-medium transition-all ${
-                  activeCategory === cat
-                    ? "gradient-tropical text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+    <div className="min-h-screen pt-32 pb-24 bg-background">
+      <div className="container mx-auto px-4">
+        {/* Editorial header */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+          <div className="lg:col-span-8">
+            <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-6">
+              § Archive — {filtered.length} works on file
+            </p>
+            <h1 className="display-mega text-foreground">
+              The<br /><span className="italic text-primary">archive.</span>
+            </h1>
           </div>
+          <p className="lg:col-span-4 self-end font-body text-base text-foreground/70 leading-relaxed">
+            A living record of tropical iconography, gel discipline
+            and quiet colour work — filter through by discipline.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {filtered.map((item, i) => (
+        {/* Filter row */}
+        <div className="border-y border-foreground/15 py-5 mb-10 flex flex-wrap gap-x-8 gap-y-3">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`font-body text-[11px] uppercase tracking-editorial transition-colors ${
+                activeCategory === cat
+                  ? "text-primary underline underline-offset-8 decoration-2"
+                  : "text-foreground/50 hover:text-foreground"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* True masonry via CSS columns */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          {filtered.map((item, i) => {
+            const heights = ["aspect-[3/4]", "aspect-square", "aspect-[4/5]", "aspect-[5/6]"];
+            return (
               <motion.div
                 key={`${item.title}-${i}`}
                 layout
-                initial="hidden"
-                animate="visible"
-                variants={{ ...fadeUp, visible: { ...fadeUp.visible, transition: { duration: 0.4, delay: i * 0.05 } } }}
-                className="overflow-hidden rounded-2xl group cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: (i % 6) * 0.04 }}
                 onClick={() => setLightbox(i)}
+                className="group break-inside-avoid cursor-pointer relative overflow-hidden"
               >
-                <div className="relative">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    loading="lazy"
-                    width={800}
-                    height={800}
-                    className="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors flex items-end">
-                    <div className="p-4 translate-y-full group-hover:translate-y-0 transition-transform">
-                      <p className="text-background font-body font-semibold text-sm">{item.title}</p>
-                      <p className="text-background/70 font-body text-xs">{item.category}</p>
-                    </div>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  loading="lazy"
+                  className={`w-full ${heights[i % heights.length]} object-cover group-hover:scale-105 transition-transform duration-700`}
+                />
+                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/60 transition-colors flex items-end p-5">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                    <p className="text-background font-display text-2xl leading-none">{item.title}</p>
+                    <p className="text-primary font-body text-[10px] uppercase tracking-editorial mt-2">
+                      {String(i + 1).padStart(2, "0")} · {item.category}
+                    </p>
                   </div>
                 </div>
               </motion.div>
-            ))}
-          </div>
+            );
+          })}
         </div>
-      </section>
+      </div>
 
       {/* Lightbox */}
       <AnimatePresence>
@@ -109,21 +105,31 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-foreground/80 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-foreground/95 z-50 flex items-center justify-center p-6"
             onClick={() => setLightbox(null)}
           >
-            <button className="absolute top-6 right-6 text-background hover:text-primary" onClick={() => setLightbox(null)}>
-              <X size={32} />
+            <button
+              className="absolute top-6 right-6 text-background hover:text-primary transition-colors"
+              onClick={() => setLightbox(null)}
+              aria-label="Close"
+            >
+              <X size={28} />
             </button>
             <motion.img
-              initial={{ scale: 0.8 }}
+              initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
+              exit={{ scale: 0.9 }}
               src={filtered[lightbox]?.img}
               alt={filtered[lightbox]?.title}
-              className="max-w-full max-h-[85vh] rounded-2xl object-contain"
+              className="max-w-full max-h-[85vh] object-contain"
               onClick={(e) => e.stopPropagation()}
             />
+            <div className="absolute bottom-8 left-8 text-background">
+              <p className="font-display text-3xl">{filtered[lightbox]?.title}</p>
+              <p className="font-body text-[11px] uppercase tracking-editorial text-primary mt-2">
+                {filtered[lightbox]?.category}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

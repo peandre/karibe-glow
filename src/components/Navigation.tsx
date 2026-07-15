@@ -27,30 +27,38 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled
+          ? "bg-background/95 backdrop-blur-md border-b border-primary/40"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Karibe Nails" className="h-14 w-auto rounded-lg" />
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="Karibe Nails" className="h-12 w-auto" />
+          <span className="hidden sm:inline font-display text-xl text-foreground leading-none">
+            Karibe<span className="text-primary">.</span>
+          </span>
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
-              className={`font-body text-sm font-medium transition-colors hover:text-primary ${
+              className={`relative font-body text-[11px] uppercase tracking-editorial font-medium transition-colors hover:text-primary ${
                 location.pathname === link.path ? "text-primary" : "text-foreground/70"
               }`}
             >
               {link.label}
+              {location.pathname === link.path && (
+                <span className="absolute -bottom-2 left-0 right-0 h-px bg-primary" />
+              )}
             </Link>
           ))}
           <Link
             to="/appointments"
-            className="gradient-tropical text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold font-body transition-transform hover:scale-105"
+            className="bg-primary text-primary-foreground px-6 py-3 text-[11px] uppercase tracking-editorial font-semibold font-body hover:bg-foreground transition-colors"
           >
             Book Now
           </Link>
@@ -68,13 +76,13 @@ const Navigation = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border">
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
+        <div className="md:hidden bg-background border-t border-primary/40">
+          <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`py-2 font-body text-sm font-medium ${
+                className={`py-2 font-body text-xs uppercase tracking-editorial font-medium ${
                   location.pathname === link.path ? "text-primary" : "text-foreground/70"
                 }`}
               >
@@ -83,7 +91,7 @@ const Navigation = () => {
             ))}
             <Link
               to="/appointments"
-              className="gradient-tropical text-primary-foreground px-5 py-2.5 rounded-full text-sm font-semibold font-body text-center mt-2"
+              className="bg-primary text-primary-foreground px-5 py-3 text-xs uppercase tracking-editorial font-semibold font-body text-center mt-2"
             >
               Book Now
             </Link>
