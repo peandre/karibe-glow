@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cabin:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,61 +6,57 @@
 
 @layer base {
   :root {
-    --background: 40 33% 96%;
-    --foreground: 0 0% 15%;
+    /* Coral Eléctrico palette */
+    --background: 15 43% 97%;         /* #fbf7f5 warm cream */
+    --foreground: 268 20% 10%;        /* #1a1420 deep violet-black */
 
-    --card: 40 33% 98%;
-    --card-foreground: 0 0% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 268 20% 10%;
 
-    --popover: 40 33% 98%;
-    --popover-foreground: 0 0% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 268 20% 10%;
 
-    --primary: 349 99% 63%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 351 82% 64%;           /* #ee5a70 coral */
+    --primary-foreground: 15 43% 97%;
 
-    --secondary: 330 100% 83%;
-    --secondary-foreground: 349 99% 40%;
+    --secondary: 250 31% 43%;         /* #574b90 deep violet */
+    --secondary-foreground: 15 43% 97%;
 
-    --muted: 40 20% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 15 25% 92%;
+    --muted-foreground: 268 10% 40%;
 
-    --accent: 24 100% 63%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 340 51% 52%;            /* #c44569 magenta */
+    --accent-foreground: 15 43% 97%;
 
-    --destructive: 0 84.2% 60.2%;
+    --highlight: 0 100% 71%;          /* #ff6b6b light coral */
+
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 349 99% 63%;
+    --border: 15 20% 88%;
+    --input: 15 20% 88%;
+    --ring: 351 82% 64%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    --tropical-green: 72 43% 64%;
-    --tropical-green-foreground: 72 43% 20%;
-    --tropical-orange: 24 100% 63%;
-    --tropical-pink: 330 100% 83%;
-    --tropical-red: 349 99% 63%;
-    --tropical-cream: 40 33% 96%;
+    --gradient-coral: linear-gradient(135deg, hsl(0 100% 71%), hsl(351 82% 64%), hsl(340 51% 52%));
+    --gradient-dusk: linear-gradient(160deg, hsl(340 51% 52%), hsl(250 31% 43%));
+    --gradient-veil: linear-gradient(180deg, hsl(15 43% 97%), hsl(15 30% 94%));
 
-    --gradient-tropical: linear-gradient(135deg, hsl(330 100% 83%), hsl(349 99% 63%), hsl(24 100% 63%));
-    --gradient-warm: linear-gradient(135deg, hsl(349 99% 63%), hsl(24 100% 63%));
-    --gradient-soft: linear-gradient(135deg, hsl(40 33% 96%), hsl(330 100% 93%));
+    --shadow-editorial: 0 30px 60px -30px hsl(268 20% 10% / 0.18);
+    --shadow-coral: 0 20px 50px -20px hsl(351 82% 64% / 0.35);
 
-    --shadow-card: 0 4px 20px -4px hsl(349 99% 63% / 0.1);
-    --shadow-elevated: 0 12px 40px -8px hsl(349 99% 63% / 0.15);
+    --font-display: 'Abril Fatface', 'Playfair Display', serif;
+    --font-body: 'Cabin', system-ui, sans-serif;
 
-    --font-display: 'Georgia', serif;
-    --font-body: 'Montserrat', sans-serif;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 15 43% 97%;
+    --sidebar-foreground: 268 20% 10%;
+    --sidebar-primary: 351 82% 64%;
+    --sidebar-primary-foreground: 15 43% 97%;
+    --sidebar-accent: 15 25% 92%;
+    --sidebar-accent-foreground: 268 20% 10%;
+    --sidebar-border: 15 20% 88%;
+    --sidebar-ring: 351 82% 64%;
   }
 }
 
@@ -69,29 +65,58 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "ss01", "cv11";
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
   }
 }
 
 @layer utilities {
-  .gradient-tropical {
-    background: var(--gradient-tropical);
-  }
-  .gradient-warm {
-    background: var(--gradient-warm);
-  }
-  .gradient-soft {
-    background: var(--gradient-soft);
-  }
-  .text-gradient-tropical {
-    background: var(--gradient-tropical);
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+
+  .gradient-coral { background: var(--gradient-coral); }
+  .gradient-dusk { background: var(--gradient-dusk); }
+  .gradient-veil { background: var(--gradient-veil); }
+
+  .text-gradient-coral {
+    background: var(--gradient-coral);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .shadow-editorial { box-shadow: var(--shadow-editorial); }
+  .shadow-coral { box-shadow: var(--shadow-coral); }
+
+  .tracking-editorial { letter-spacing: 0.22em; }
+
+  .display-mega {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 12vw, 11rem);
+    line-height: 0.88;
+    letter-spacing: -0.035em;
+  }
+
+  .rule-coral {
+    background-image: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary)) 100%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
   }
 }
