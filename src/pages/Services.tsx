@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 import { Plus, Minus, ArrowUpRight } from "lucide-react";
 
 const servicesList = [
-  { n: "01", title: "Basic Manicure", price: "$25", duration: "30 min", desc: "Classic manicure with nail shaping, cuticle care and premium polish." },
-  { n: "02", title: "Gel Polish Manicure", price: "$35", duration: "45 min", desc: "Long-lasting gel polish with a high-shine finish that lasts up to two weeks." },
-  { n: "03", title: "Deluxe Pedicure", price: "$40", duration: "45 min", desc: "Restorative pedicure with exfoliation, massage and your choice of polish." },
-  { n: "04", title: "Acrylic Full Set", price: "$50", duration: "60 min", desc: "Full acrylic extensions shaped and styled to your specification." },
-  { n: "05", title: "Acrylic Fill", price: "$35", duration: "45 min", desc: "Maintenance fill for existing acrylics — keeps the set looking fresh." },
-  { n: "06", title: "Tropical Nail Art", price: "$15+", duration: "Varies", desc: "Custom Caribbean-inspired designs drawn by hand." },
-  { n: "07", title: "Gel Extensions", price: "$55", duration: "75 min", desc: "Lightweight gel extensions for natural-looking length and strength." },
-  { n: "08", title: "Nail Repair", price: "$10", duration: "15 min", desc: "Quick repair for broken or damaged nails." },
+  { n: "01", title: "Manicura rusa — cortas", price: "$45", duration: "Hard / Builder gel", desc: "Manicura rusa con hard o builder gel, longitud corta. Acabado impecable de larga duración." },
+  { n: "02", title: "Manicura rusa — medianas", price: "$55", duration: "Hard / Builder gel", desc: "Manicura rusa con hard o builder gel, longitud mediana. Forma y color a tu medida." },
+  { n: "03", title: "Manicura rusa — largas", price: "$60", duration: "Hard / Builder gel", desc: "Manicura rusa con hard o builder gel, longitud larga. Máxima presencia y resistencia." },
+  { n: "04", title: "MANicure", price: "$25", duration: "Classic", desc: "Manicura clásica con limado, cuidado de cutícula y esmaltado tradicional." },
+  { n: "05", title: "Pedicura", price: "$60", duration: "Incluye color en gel", desc: "Pedicura completa que incluye esmaltado en gel para un acabado duradero." },
+  { n: "06", title: "Extensión", price: "$65+", duration: "Gel tips o forms", desc: "Extensiones con gel tips o forms, moldeadas para lograr la longitud deseada." },
+  { n: "07", title: "Esmaltado gel en pies", price: "$25", duration: "Incluye limpieza de cutícula", desc: "Esmaltado gel en pies con limpieza de cutícula incluida." },
+  { n: "08", title: "Broken nail", price: "$3+", duration: "Quick fix", desc: "Reparación rápida de una uña rota o dañada." },
+  { n: "09", title: "Remoción", price: "$10", duration: "Trabajo externo", desc: "Remoción de trabajo no realizado por Karibe Nails." },
+  { n: "10", title: "Nail art", price: "Varía", duration: "Add-ons", desc: "Diseños personalizados a mano. Los precios varían según el diseño o add-ons." },
 ];
 
 const faqs = [
