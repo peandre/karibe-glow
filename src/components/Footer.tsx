@@ -85,13 +85,19 @@ const Footer = () => (
             <div className="flex items-center gap-3"><MapPin size={14} /> San Juan, Puerto Rico</div>
           </div>
           <h4 className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">
-            Hours
+            Horario
           </h4>
           <div className="flex flex-col gap-1 text-sm text-background/70 font-body">
-            <p><span className="text-background/50">Mon–Fri</span>  ·  9am – 7pm</p>
-            <p><span className="text-background/50">Saturday</span>  ·  10am – 6pm</p>
-            <p><span className="text-background/50">Sunday</span>  ·  Closed</p>
+            <p><span className="text-background/50">Martes</span>  ·  9am – 4pm</p>
+            <p><span className="text-background/50">Miércoles</span>  ·  8am – 4pm</p>
+            <p><span className="text-background/50">Jueves</span>  ·  1pm – 5pm</p>
+            <p><span className="text-background/50">Viernes</span>  ·  8am – 3pm</p>
+            <p><span className="text-background/50">Sábado</span>  ·  9am – 5pm</p>
+            <p><span className="text-background/50">Lun / Dom</span>  ·  Cerrado</p>
           </div>
+          <p className="mt-4 text-xs text-background/50 font-body leading-relaxed">
+            * Horario fuera de este rango tiene costo adicional <span className="text-primary font-semibold">VIP</span>.
+          </p>
         </div>
       </div>
 

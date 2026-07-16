@@ -4,15 +4,26 @@ import { ArrowUpRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const serviceOptions = [
-  "Basic Manicure",
-  "Gel Polish Manicure",
-  "Deluxe Pedicure",
-  "Acrylic Full Set",
-  "Acrylic Fill",
-  "Tropical Nail Art",
-  "Gel Extensions",
-  "Nail Repair",
+  "Manicura rusa — cortas ($45)",
+  "Manicura rusa — medianas ($55)",
+  "Manicura rusa — largas ($60)",
+  "MANicure ($25)",
+  "Pedicura ($60)",
+  "Extensión gel tips/forms ($65+)",
+  "Esmaltado gel en pies ($25)",
+  "Broken nail ($3+)",
+  "Remoción ($10)",
+  "Nail art (varía)",
+  "VIP — fuera de horario",
   "Other",
+];
+
+const hoursList = [
+  { day: "Martes", time: "9am – 4pm" },
+  { day: "Miércoles", time: "8am – 4pm" },
+  { day: "Jueves", time: "1pm – 5pm" },
+  { day: "Viernes", time: "8am – 3pm" },
+  { day: "Sábado", time: "9am – 5pm" },
 ];
 
 const Appointments = () => {
@@ -137,7 +148,6 @@ const Appointments = () => {
                 { label: "Phone", value: "+1 787 123 4567" },
                 { label: "Email", value: "info@karibenails.com" },
                 { label: "Studio", value: "San Juan, Puerto Rico" },
-                { label: "Hours", value: "Mon–Fri 9am–7pm · Sat 10am–6pm" },
               ].map((row) => (
                 <div key={row.label} className="grid grid-cols-3 py-5 border-b border-foreground/15">
                   <span className="font-body text-[11px] uppercase tracking-editorial text-primary">
@@ -148,6 +158,25 @@ const Appointments = () => {
                   </span>
                 </div>
               ))}
+            </div>
+
+            {/* Horario */}
+            <div className="mt-10">
+              <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">
+                § Horario
+              </p>
+              <div className="border-t border-foreground/15">
+                {hoursList.map((h) => (
+                  <div key={h.day} className="flex items-baseline justify-between py-4 border-b border-foreground/15">
+                    <span className="font-display text-2xl text-foreground leading-none">{h.day}</span>
+                    <span className="font-body text-sm text-foreground/70 tabular-nums">{h.time}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-4 text-xs font-body text-foreground/60 leading-relaxed">
+                * Horario fuera de este rango tiene costo adicional{" "}
+                <span className="inline-block px-2 py-0.5 bg-primary text-primary-foreground font-semibold tracking-wider">VIP</span>.
+              </p>
             </div>
 
             {/* Booksy panel */}
