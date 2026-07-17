@@ -36,10 +36,10 @@ const About = () => (
             className="lg:col-span-5 lg:sticky lg:top-32"
           >
             <div className="aspect-[4/5] overflow-hidden">
-              <img src={karinaImg} alt="Karina, nail artist" className="w-full h-full object-cover" />
+              <img src={karinaImg} alt="Genesis, nail artist" className="w-full h-full object-cover" />
             </div>
             <div className="mt-4 flex items-center justify-between font-body text-[10px] uppercase tracking-editorial text-foreground/50">
-              <span>Karina · Founder</span>
+              <span>Genesis · Founder</span>
               <span>Portrait Nº 001</span>
             </div>
           </motion.div>
@@ -52,20 +52,20 @@ const About = () => (
             className="lg:col-span-6 lg:col-start-7"
           >
             <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-6">
-              Meet Karina
+              Meet Genesis
             </p>
             <h2 className="font-display text-5xl md:text-6xl leading-none mb-10">
               A quiet<br /><span className="italic">obsession with<br />colour.</span>
             </h2>
             <div className="space-y-6 font-body text-lg text-foreground/70 leading-relaxed">
               <p>
-                Karibe Nails is run by Karina, a passionate nail artist with more than a
-                decade of experience in Puerto Rico, specialising in tropical-themed designs
+                Karibe Nails is run by Genesis, a passionate nail artist with more than a
+                decade of experience in Puerto Rico, specializing in tropical-themed designs
                 that capture the vibrant, unhurried spirit of the Caribbean.
               </p>
               <p>
                 What began as a hobby quickly turned into a calling. After formal training
-                and years of perfecting her craft, Karina opened Karibe to share a very
+                and years of perfecting her craft, Genesis opened Karibe to share a very
                 specific point of view with the San Juan community.
               </p>
               <p className="font-display text-2xl text-foreground italic leading-tight">
