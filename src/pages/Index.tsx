@@ -256,7 +256,7 @@ const Index = () => (
     <section className="py-28">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mb-16">
-          <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">§ 03 — In their words</p>
+          <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">§ 04 — In their words</p>
           <h2 className="font-display text-6xl leading-none">
             What clients<br /><span className="italic">whisper.</span>
           </h2>
