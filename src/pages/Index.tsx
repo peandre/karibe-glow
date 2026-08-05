@@ -191,7 +191,7 @@ const Index = () => (
               transition={{ duration: 0.4 }}
               className="flex items-baseline justify-between py-5 border-b border-foreground/15"
             >
-              <span className="font-display text-2xl md:text-4xl text-foreground leading-none">{h.day}</span>
+              <span className="font-display text-2xl md:text-4xl text-secondary-foreground leading-none">{h.day}</span>
               <span className="font-body text-sm md:text-base text-secondary-foreground/70 tabular-nums">{h.time}</span>
             </motion.div>
           ))}
