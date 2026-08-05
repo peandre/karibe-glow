@@ -58,10 +58,10 @@ const Index = () => (
                 <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
               <Link
-                to="/portfolio"
+                to="/services"
                 className="font-body text-[11px] uppercase tracking-editorial text-foreground/70 hover:text-primary transition-colors border-b border-foreground/30 pb-1"
               >
-                See the archive
+                Ver precios y servicios
               </Link>
             </div>
           </div>
