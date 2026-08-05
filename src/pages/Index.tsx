@@ -8,10 +8,16 @@ import nails3 from "@/assets/nails-art-3.jpg";
 import pedicure from "@/assets/pedicure.jpg";
 
 const services = [
-  { n: "01", title: "Manicures", desc: "Classic and gel treatments, precisely finished." },
-  { n: "02", title: "Pedicures", desc: "Restorative spa rituals from ankle to arch." },
-  { n: "03", title: "Nail Art", desc: "Signature tropical iconography, drawn by hand." },
-  { n: "04", title: "Acrylics & Gel", desc: "Extensions built to hold shape and shine." },
+  { n: "01", title: "Manicura rusa — cortas", price: "$45", duration: "Hard / Builder gel", desc: "Manicura rusa con hard o builder gel, longitud corta." },
+  { n: "02", title: "Manicura rusa — medianas", price: "$55", duration: "Hard / Builder gel", desc: "Manicura rusa con hard o builder gel, longitud mediana." },
+  { n: "03", title: "Manicura rusa — largas", price: "$60", duration: "Hard / Builder gel", desc: "Manicura rusa con hard o builder gel, longitud larga." },
+  { n: "04", title: "MANicure", price: "$25", duration: "Classic", desc: "Manicura clásica con limado, cuidado de cutícula y esmaltado." },
+  { n: "05", title: "Pedicura", price: "$60", duration: "Incluye color en gel", desc: "Pedicura completa con esmaltado en gel duradero." },
+  { n: "06", title: "Extensión", price: "$65+", duration: "Gel tips o forms", desc: "Extensiones moldeadas para lograr la longitud deseada." },
+  { n: "07", title: "Esmaltado gel en pies", price: "$25", duration: "Incluye limpieza", desc: "Esmaltado gel en pies con limpieza de cutícula." },
+  { n: "08", title: "Broken nail", price: "$3+", duration: "Quick fix", desc: "Reparación rápida de una uña rota o dañada." },
+  { n: "09", title: "Remoción", price: "$10", duration: "Trabajo externo", desc: "Remoción de trabajo no realizado por Karibe Nails." },
+  { n: "10", title: "Nail art", price: "Varía", duration: "Add-ons", desc: "Diseños personalizados a mano. Precios varían según diseño." },
 ];
 
 const testimonials = [
