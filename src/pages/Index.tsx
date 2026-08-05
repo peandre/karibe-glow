@@ -97,19 +97,18 @@ const Index = () => (
       </div>
     </section>
 
-    {/* SERVICES — editorial numbered list */}
-    <section className="py-28">
+    {/* SERVICES & PRICES — editorial numbered list */}
+    <section id="servicios" className="py-28">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-          <div className="lg:col-span-4">
-            <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">§ 01 — Services</p>
+          <div className="lg:col-span-5">
+            <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">§ 01 — Servicios & Precios</p>
             <h2 className="font-display text-6xl leading-none text-foreground">
-              What we<br /><span className="italic">do best.</span>
+              El menú<br /><span className="italic">real.</span>
             </h2>
           </div>
           <p className="lg:col-span-6 lg:col-start-7 font-body text-lg text-foreground/70 leading-relaxed self-end">
-            Four disciplines. One quiet obsession with getting every edge, curve
-            and colour exactly right.
+            Precios claros y tiempos realistas. Desde manicura rusa hasta nail art a mano — todo en una sola pantalla.
           </p>
         </div>
 
@@ -121,31 +120,87 @@ const Index = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="group grid grid-cols-12 items-center py-8 border-b border-foreground/15 hover:bg-primary/5 transition-colors px-2"
+              className="group grid grid-cols-12 gap-4 items-center py-6 border-b border-foreground/15 hover:bg-primary/5 transition-colors px-2"
             >
               <span className="col-span-2 md:col-span-1 font-body text-[11px] tracking-editorial text-primary">{s.n}</span>
-              <h3 className="col-span-10 md:col-span-4 font-display text-3xl md:text-5xl text-foreground group-hover:text-primary transition-colors">
-                {s.title}
-              </h3>
-              <p className="hidden md:block md:col-span-5 font-body text-sm text-foreground/60 leading-relaxed">
+              <div className="col-span-10 md:col-span-4">
+                <h3 className="font-display text-2xl md:text-4xl text-foreground group-hover:text-primary transition-colors leading-none">
+                  {s.title}
+                </h3>
+              </div>
+              <p className="col-span-12 md:col-span-4 font-body text-sm text-foreground/60 leading-relaxed">
                 {s.desc}
               </p>
-              <ArrowUpRight
-                size={28}
-                className="col-span-12 md:col-span-2 justify-self-end text-foreground/40 group-hover:text-primary group-hover:rotate-45 transition-all mt-4 md:mt-0"
-              />
+              <div className="col-span-6 md:col-span-2 font-body text-[11px] uppercase tracking-editorial text-foreground/50">
+                {s.duration}
+              </div>
+              <div className="col-span-6 md:col-span-1 justify-self-end font-display text-2xl text-foreground">
+                {s.price}
+              </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-12">
+        <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
           <Link
             to="/services"
             className="inline-flex items-center gap-2 font-body text-[11px] uppercase tracking-editorial text-foreground/70 hover:text-primary"
           >
-            Full service index <ArrowUpRight size={14} />
+            Ver menú completo <ArrowUpRight size={14} />
+          </Link>
+          <Link
+            to="/appointments"
+            className="group inline-flex items-center gap-3 bg-foreground text-background px-7 py-4 text-[11px] uppercase tracking-editorial font-semibold hover:bg-primary transition-colors"
+          >
+            Reservar ahora
+            <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
         </div>
+      </div>
+    </section>
+
+    {/* HOURS — editorial schedule */}
+    <section id="horario" className="py-28 bg-secondary text-secondary-foreground">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+          <div className="lg:col-span-5">
+            <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">§ 02 — Horario</p>
+            <h2 className="font-display text-6xl leading-none">
+              Cuándo<br /><span className="italic">encontrarnos.</span>
+            </h2>
+          </div>
+          <p className="lg:col-span-6 lg:col-start-7 font-body text-lg text-secondary-foreground/70 leading-relaxed self-end">
+            Martes a sábado. Lunes y domingo cerrado. Fuera de este horario aplica costo adicional VIP.
+          </p>
+        </div>
+
+        <div className="border-t border-foreground/15 max-w-4xl">
+          {[
+            { day: "Martes", time: "9am – 4pm" },
+            { day: "Miércoles", time: "8am – 4pm" },
+            { day: "Jueves", time: "1pm – 5pm" },
+            { day: "Viernes", time: "8am – 3pm" },
+            { day: "Sábado", time: "9am – 5pm" },
+            { day: "Lunes / Domingo", time: "Cerrado" },
+          ].map((h) => (
+            <motion.div
+              key={h.day}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4 }}
+              className="flex items-baseline justify-between py-5 border-b border-foreground/15"
+            >
+              <span className="font-display text-2xl md:text-4xl text-foreground leading-none">{h.day}</span>
+              <span className="font-body text-sm md:text-base text-secondary-foreground/70 tabular-nums">{h.time}</span>
+            </motion.div>
+          ))}
+        </div>
+
+        <p className="mt-6 text-xs font-body text-secondary-foreground/60 leading-relaxed max-w-2xl">
+          * Horario fuera de este rango tiene costo adicional{" "}
+          <span className="inline-block px-2 py-0.5 bg-primary text-primary-foreground font-semibold tracking-wider">VIP</span>.
+        </p>
       </div>
     </section>
 
