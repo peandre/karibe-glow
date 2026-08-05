@@ -209,7 +209,7 @@ const Index = () => (
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16 items-end">
           <div className="lg:col-span-6">
-            <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">§ 02 — Archive</p>
+            <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-4">§ 03 — Archive</p>
             <h2 className="font-display text-6xl md:text-7xl leading-none">
               A hand-made<br /><span className="italic text-primary">archive.</span>
             </h2>
