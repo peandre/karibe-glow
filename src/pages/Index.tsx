@@ -28,6 +28,23 @@ const testimonials = [
 
 const Index = () => (
   <div className="bg-background">
+    {/* FLOATING QUICK JUMPS — services & hours */}
+    <div className="fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-40 flex items-center gap-px bg-primary text-primary-foreground shadow-coral">
+      <a
+        href="#servicios"
+        className="px-5 py-3 md:px-6 md:py-3.5 font-body text-[10px] md:text-[11px] uppercase tracking-editorial font-semibold hover:bg-foreground hover:text-background transition-colors"
+      >
+        Servicios y Precios
+      </a>
+      <span className="w-px h-4 bg-primary-foreground/30" />
+      <a
+        href="#horario"
+        className="px-5 py-3 md:px-6 md:py-3.5 font-body text-[10px] md:text-[11px] uppercase tracking-editorial font-semibold hover:bg-foreground hover:text-background transition-colors"
+      >
+        Horario
+      </a>
+    </div>
+
     {/* HERO — asymmetric split */}
     <section className="relative min-h-screen pt-24 pb-16 overflow-hidden">
       <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
