@@ -25,7 +25,7 @@ const Footer = () => (
         {/* Statement */}
         <div className="md:col-span-5">
           <p className="text-background/70 font-body text-sm leading-relaxed max-w-sm">
-            Nails as canvas. Ten years of tropical craft in the heart of San Juan,
+            Nails as canvas. Since 2023 — tropical craft in the heart of San Juan,
             Puerto Rico — reserved, precise, unmistakably ours.
           </p>
           <div className="flex gap-2 mt-6">
