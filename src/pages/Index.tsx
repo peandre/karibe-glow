@@ -55,7 +55,7 @@ const Index = () => (
           className="lg:col-span-7 relative z-10"
         >
           <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-6">
-            Est. 2015 — San Juan, PR · Issue Nº 01
+            Est. 2023 — San Juan, PR · Issue Nº 01
           </p>
           <h1 className="display-mega text-foreground">
             Nails as<br />
