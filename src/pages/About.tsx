@@ -17,7 +17,7 @@ const About = () => (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24">
         <div className="lg:col-span-8">
           <p className="font-body text-[11px] uppercase tracking-editorial text-primary mb-6">
-            § About — Since 2015
+            § About — Since 2023
           </p>
           <h1 className="display-mega text-foreground">
             The<br /><span className="italic text-primary">story.</span>
