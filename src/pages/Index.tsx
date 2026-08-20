@@ -125,7 +125,7 @@ const Index = () => (
             </h2>
           </div>
           <p className="lg:col-span-6 lg:col-start-7 font-body text-lg text-foreground/70 leading-relaxed self-end">
-            Precios claros y tiempos realistas. Desde manicura rusa hasta nail art a mano — todo en una sola pantalla.
+            Precios claros y tiempos realistas. Desde manicura rusa hasta nail art hecho a mano, cuidamos cada detalle para que salgas con unas uñas que te encanten.
           </p>
         </div>
 
