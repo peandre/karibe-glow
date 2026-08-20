@@ -7,7 +7,7 @@ const values = [
   { n: "01", title: "Excellence", desc: "Only premium products. Only the current techniques." },
   { n: "02", title: "Care", desc: "Every client is greeted, listened to and looked after — no exceptions." },
   { n: "03", title: "Creativity", desc: "From minimalist to maximalist, we translate what you bring into something wearable." },
-  { n: "04", title: "Community", desc: "Ten years, one neighbourhood. San Juan raised us and we haven't forgotten." },
+  { n: "04", title: "Community", desc: "One neighbourhood, one atelier. San Juan raised us and we haven't forgotten." },
 ];
 
 const About = () => (
@@ -59,8 +59,8 @@ const About = () => (
             </h2>
             <div className="space-y-6 font-body text-lg text-foreground/70 leading-relaxed">
               <p>
-                Karibe Nails is run by Genesis, a passionate nail artist with more than a
-                decade of experience in Puerto Rico, specializing in tropical-themed designs
+                Karibe Nails is run by Genesis, a passionate nail artist with
+                years of experience in Puerto Rico, specializing in tropical-themed designs
                 that capture the vibrant, unhurried spirit of the Caribbean.
               </p>
               <p>
@@ -77,7 +77,7 @@ const About = () => (
             {/* Stats strip */}
             <div className="grid grid-cols-3 gap-4 mt-14 border-t border-foreground/15 pt-10">
               {[
-                { k: "10+", v: "Years of craft" },
+                { k: "3+", v: "Years of craft" },
                 { k: "2K", v: "Clients seen" },
                 { k: "1", v: "Woman, one atelier" },
               ].map((s) => (

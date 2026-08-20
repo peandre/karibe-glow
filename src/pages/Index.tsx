@@ -64,7 +64,7 @@ const Index = () => (
           <div className="mt-10 max-w-md">
             <p className="font-body text-base text-foreground/70 leading-relaxed">
               A quiet nail atelier where Caribbean colour, meticulous craft
-              and ten years of hand-drawn detail meet at your fingertips.
+              and hand-drawn detail meet at your fingertips.
             </p>
             <div className="flex items-center gap-6 mt-8">
               <Link
@@ -94,7 +94,7 @@ const Index = () => (
             <img src={heroImg} alt="Karibe Nails salon" className="w-full h-full object-cover" />
           </div>
           <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-5 max-w-[180px] shadow-coral">
-            <p className="font-display text-3xl leading-none">10<span className="text-lg">yrs</span></p>
+            <p className="font-display text-3xl leading-none">3<span className="text-lg">yrs</span></p>
             <p className="font-body text-[10px] uppercase tracking-editorial mt-2">of Caribbean craft</p>
           </div>
         </motion.div>
